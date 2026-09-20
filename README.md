@@ -1,8 +1,5 @@
 # FancyArmySystem
 
-## Description
-
-This is a Java project for the Software Design Patterns assignment. It demonstrates the Factory Method and Abstract Factory design patterns.
 
 ## Factory Method
 
