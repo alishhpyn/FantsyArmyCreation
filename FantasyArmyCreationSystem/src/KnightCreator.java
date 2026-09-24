@@ -1,6 +1,7 @@
-public class KnightCreator extends UnitCreator{
+public class KnightCreator extends UnitCreator {
+
     @Override
-    public Unit createUnit() {
+    public IUnit createUnit() {
         return new Knight();
     }
 }

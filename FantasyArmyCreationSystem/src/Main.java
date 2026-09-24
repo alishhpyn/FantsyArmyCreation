@@ -1,42 +1,50 @@
-
-class Main {
+public class Main {
 
     public static void main(String[] args) {
 
+        // Factory Method
         System.out.println("=== Factory Method ===");
 
         UnitCreator knightCreator = new KnightCreator();
-        UnitCreator elfCreator = new ElfCreator();
+        IUnit knight = knightCreator.createUnit();
+
         UnitCreator trollCreator = new TrollCreator();
+        IUnit troll = trollCreator.createUnit();
 
-        Unit knight = knightCreator.createUnit();
-        Unit elf = elfCreator.createUnit();
-        Unit troll = trollCreator.createUnit();
+        System.out.println("\nCreated units:");
 
+        System.out.println(knight.getName());
+        System.out.println("Health: " + knight.getHealth());
+        System.out.println("Damage: " + knight.getDamage());
         knight.attack();
-        elf.attack();
+
+        System.out.println();
+
+        System.out.println(troll.getName());
+        System.out.println("Health: " + troll.getHealth());
+        System.out.println("Damage: " + troll.getDamage());
         troll.attack();
 
 
+        // Abstract Factory
         System.out.println("\n=== Abstract Factory ===");
 
-        ArmyEquipmentFactory knightFactory =
-                new KnightEquipmentFactory();
-
-        Weapon knightWeapon = knightFactory.createWeapon();
-        Armor knightArmor = knightFactory.createArmor();
-
-        knightWeapon.use();
-        knightArmor.protect();
-
-
-        ArmyEquipmentFactory elfFactory =
-                new ElfEquipmentFactory();
+        ArmyEquipmentFactory elfFactory = new ElfEquipmentFactory();
 
         Weapon elfWeapon = elfFactory.createWeapon();
         Armor elfArmor = elfFactory.createArmor();
 
+        System.out.println("\nElf army equipment:");
         elfWeapon.use();
         elfArmor.protect();
+
+        ArmyEquipmentFactory knightFactory = new KnightEquipmentFactory();
+
+        Weapon knightWeapon = knightFactory.createWeapon();
+        Armor knightArmor = knightFactory.createArmor();
+
+        System.out.println("\nKnight army equipment:");
+        knightWeapon.use();
+        knightArmor.protect();
     }
 }

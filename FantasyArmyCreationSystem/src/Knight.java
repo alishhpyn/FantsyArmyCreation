@@ -1,14 +1,11 @@
-public class Knight extends Unit {
-
-    private static final int KNIGHT_HEALTH = 150;
-    private static final int KNIGHT_DAMAGE = 25;
+public class Knight extends AbstractUnit {
 
     public Knight() {
-        super("Knight", KNIGHT_HEALTH, KNIGHT_DAMAGE);
+        super("Knight", 150, 25);
     }
 
     @Override
     public void attack() {
-        System.out.println("Knight attacks with a sword.");
+        System.out.println(getName() + " attacks with a sword.");
     }
 }

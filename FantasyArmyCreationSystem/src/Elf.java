@@ -1,14 +1,11 @@
-public class Elf extends Unit {
-
-    private static final int ELF_HEALTH = 100;
-    private static final int ELF_DAMAGE = 35;
+public class Elf extends AbstractUnit {
 
     public Elf() {
-        super("Elf", ELF_HEALTH, ELF_DAMAGE);
+        super("Elf", 90, 35);
     }
 
     @Override
     public void attack() {
-        System.out.println("attacks with a bow.");
+        System.out.println(getName() + " attacks with a bow.");
     }
 }

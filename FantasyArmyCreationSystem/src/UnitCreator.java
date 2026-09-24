@@ -1,4 +1,4 @@
 public abstract class UnitCreator {
-    public abstract Unit createUnit();
+    public abstract IUnit createUnit();
 
 }

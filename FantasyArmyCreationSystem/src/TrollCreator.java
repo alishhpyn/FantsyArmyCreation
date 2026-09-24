@@ -1,6 +1,6 @@
 public class TrollCreator extends UnitCreator{
     @Override
-    public Unit createUnit(){
+    public IUnit createUnit(){
         return new Troll();
     }
 }
